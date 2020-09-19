@@ -1,0 +1,56 @@
+.body {
+  width: 50em;
+  font-family: "Calibri", "Arial";
+}
+
+.question {
+  margin: 1em 0;
+  padding: 1em;
+  color: darkblue;
+  background-color: azure;
+  border-radius: 1em;
+}
+
+.answersX {
+  margin: 1em;
+  padding: 1em;
+}
+
+.option {
+  margin: 0.5em;
+}
+
+.answer-choice-text {
+  margin-left: 0.5em;
+}
+
+.buttons {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+
+.button {
+  margin: 1em;
+  padding: 1em;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  width: 8em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.previous, .next {
+  width: 8em;
+  background-color: darkslateblue;
+ }
+
+.next, .finish {
+  margin-left: auto;
+}
+
+.finish {
+  width: 15em;
+  background-color: blue;
+}

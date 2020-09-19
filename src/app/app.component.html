@@ -1,0 +1,32 @@
+<div class="body">
+  <h1>
+    Test Exam
+  </h1>
+
+  <div *ngIf="!finished">
+    <div class="question" [innerHTML]="question.question"></div>
+
+    <div class="answers">
+      <div class="option" *ngFor="let choice of question.choices">
+        <input type="checkbox" [(ngModel)]="choice.answer"/>
+        <span class="answer-choice-text" [innerHTML]="choice.text"></span>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <input [hidden]="questionNr == 0" class="button previous" type="button" value="Previous" (click)="navigate(-1)">
+      <input *ngIf="questionNr < questions.length - 1" class="button next" type="button" value="Next" (click)="navigate(1)">
+      <input *ngIf="questionNr == questions.length - 1" class="button finish" type="button" value="See what your score is"
+              (click)="finish()">
+    </div>
+    <div *ngIf="notAnsweredAllQuestions">
+      You didn't answer all questions. You can navigate to these questions using the <b>Previous</b> button.
+    </div>
+  </div>
+
+  <div *ngIf="finished">
+    <h2>Your score</h2>
+    You have answered {{numberOfCorrectAnswers}} correctly, therefore, your score is {{score}}%.<br>
+    To pass for the exam, you have to have a score of at least 63%.
+  </div>
+</div>
